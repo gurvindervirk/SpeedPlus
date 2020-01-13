@@ -1,0 +1,62 @@
+﻿@model VegaModel.VegetableModel
+
+@{
+    ViewBag.Title = "Delete Vegetable";
+}
+<br />
+<h4>Are you sure you want to delete this?</h4>
+<div class="container">
+    <br />
+    <h5>Delete Vegetable</h5>
+    <hr />
+    <dl class="dl-horizontal">
+        <div class="row">
+            <dt class="col-md-1">@Html.DisplayNameFor(model => model.Vegetable)</dt>
+            <dd class="col-md-1">@Html.DisplayFor(model => model.Vegetable)</dd>
+        </div>
+
+        <div class="row">
+            <dt class="col-md-1">@Html.DisplayNameFor(model => model.Arhat)</dt>
+            <dd class="col-md-1">@Html.DisplayFor(model => model.Arhat)</dd>
+        </div>
+
+            <div class="row">
+                <dt class="col-md-1">@Html.DisplayNameFor(model => model.Laga)</dt>
+                <dd class="col-md-1">@Html.DisplayFor(model => model.Laga)</dd>
+            </div>
+
+         <div class="row">
+             <dt class="col-md-1">@Html.DisplayNameFor(model => model.RDF)</dt>
+             <dd class="col-md-1">@Html.DisplayFor(model => model.RDF)</dd>
+         </div>
+
+        <div class="row">
+            <dt class="col-md-1">@Html.DisplayNameFor(model => model.MDF)</dt>
+            <dd class="col-md-1">@Html.DisplayFor(model => model.MDF)</dd>
+        </div>
+       
+        <div class="row">
+            <dt class="col-md-1">@Html.DisplayNameFor(model => model.Bardana)</dt>
+            <dd class="col-md-1">@Html.DisplayFor(model => model.Bardana)</dd>
+        </div>
+       
+        <div class="row">
+            <dt class="col-md-1">@Html.DisplayNameFor(model => model.Crate)</dt>
+            <dd class="col-md-1">@Html.DisplayFor(model => model.Crate)</dd>
+        </div>
+    
+    </dl>
+    @using (Html.BeginForm("Delete", "Vegetable", FormMethod.Post, null))
+
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.Id)
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a href='@Url.Action("Index", "Vegetable")' class="btn btn-primary">Back to List</a>
+        
+    </div>
+    }
+</div>

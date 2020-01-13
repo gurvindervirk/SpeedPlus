@@ -1,0 +1,95 @@
+﻿@model IEnumerable<VegaModel.VegetableModel>
+
+@{
+    ViewBag.Title = "IndexDemo";
+}
+<!-- Editable table -->
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-1">VEGETABLE LIST</h3>
+    <div class="card-body">
+        <div id="table" class="table-editable">
+            <span class="table-add float-right mb-1 mr-1">
+                <a href="#!" class="text-success">
+                    <i class="fas fa-plus fa-2x" aria-hidden="true"></i>
+                </a>
+            </span>
+            <table id="dtBasicExample" class="table table-bordered table-responsive-md table-striped text-center" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th class="text-center">Vegetable</th>
+                        <th class="text-center">Arhat</th>
+                        <th class="text-center">Laga</th>
+                        <th class="text-center">RDF</th>
+                        <th class="text-center">MDF</th>
+                        <th class="text-center">Bardana</th>
+                        <th class="text-center">Crate</th>
+                        <th class="text-center">Sort</th>
+                        <th class="text-center">Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="pt-3-half" contenteditable="true">
+                                @Html.DisplayFor(modelItem => item.Vegetable)
+                            </td>
+                            <td class="pt-3-half" contenteditable="true">
+                                @Html.DisplayFor(modelItem => item.Arhat)
+                            </td>
+                            <td class="pt-3-half" contenteditable="true">
+                                @Html.DisplayFor(modelItem => item.Laga)
+                            </td>
+                            <td class="pt-3-half" contenteditable="true">
+                                @Html.DisplayFor(modelItem => item.RDF)
+                            </td>
+                            <td class="pt-3-half" contenteditable="true">
+                                @Html.DisplayFor(modelItem => item.MDF)
+                            </td>
+                            <td class="pt-3-half" contenteditable="true">
+                                @Html.DisplayFor(modelItem => item.Bardana)
+                            </td>
+                            <td class="pt-3-half" contenteditable="true">
+                                @Html.DisplayFor(modelItem => item.Crate)
+                            </td>
+
+                            <td class="pt-3-half">
+                                <span class="table-up">
+                                    <a href="#!" class="indigo-text">
+                                        <i class="fas fa-long-arrow-alt-up"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                                <span class="table-down">
+                                    <a href="#!" class="indigo-text">
+                                        <i class="fas fa-long-arrow-alt-down"
+                                           aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </td>
+                            <td>
+                                <span class="table-remove">
+                                    <button type="button"
+                                            class="btn btn-danger btn-rounded btn-sm my-0">
+                                        Remove
+                                    </button>
+                                </span>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('#dtBasicExample').DataTable({
+                "pagingType": "simple"
+            });
+            $('.dataTables_length').addClass('bs-select');
+        });
+    </script>
+}
+

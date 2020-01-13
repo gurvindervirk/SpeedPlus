@@ -1,0 +1,29 @@
+﻿<h2>Roles</h2>
+<a href="#/addroles"class=" btn btn-primary ">Create New </a>
+<div class="panel panel-default">
+        <div class="panel-heading">
+            List Roles
+        </div>
+    <div class="panel-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Role </th>
+                    <th>Status </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="i in roles">
+                    <td>{{i.Role}} </td>
+                    <td>{{i.IsInactive}} </td>
+                </tr>
+                <tr ng-if="!roles || roles.length==0">
+                    <td colspan="2" style="text-align:center">
+                        No Roles to display.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

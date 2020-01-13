@@ -1,0 +1,25 @@
+﻿<h2>Create</h2>
+<form class="form-horizontal " ng-submit="createRoles(roles)">
+    <h4>Create New Role</h4>
+    <hr />
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10 ">
+            <input type="text" class="form-control" ng-model="roles.Role" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="checkbox">
+            <label class="col-lg-2 control-label">Status </label>
+            <div class="col-lg-10 ">
+                <input type="checkbox" ng-model="roles.IsInactive" />
+            </div>
+            </div>
+        </div>
+     <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10 ">
+            <input type="submit" class="btn btn-success" value="Create" />
+                  <a href="#/" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</form>
